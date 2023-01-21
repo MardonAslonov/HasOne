@@ -15,5 +15,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $directors = \App\Models\Director::all();
+
+    foreach($directors as $director){
+        echo 'Director name: '.$director['name'].'<br>';
+    }
+    
 });
