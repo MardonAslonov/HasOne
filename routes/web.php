@@ -19,6 +19,8 @@ Route::get('/', function () {
 
     foreach($directors as $director){
         echo 'Director name: '.$director['name'].'<br>';
+        echo 'Film: '.$director->film['name'].'<br>';
+        echo '-------------------------------'.'<br>';
     }
-    
+
 });
