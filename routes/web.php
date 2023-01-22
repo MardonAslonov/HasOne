@@ -24,3 +24,14 @@ Route::get('/', function () {
     }
 
 });
+
+Route::get('film', function () {
+    $films = \App\Models\Film::all();
+
+    foreach($films as $film){
+        echo 'Film name: '.$film['name'].'<br>';
+        echo 'Director: '.$film->director['name'].'<br>';
+        echo '-------------------------------'.'<br>';
+    }
+
+});
