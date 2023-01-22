@@ -35,3 +35,17 @@ Route::get('film', function () {
     }
 
 });
+
+Route::get('author', function () {
+    $authors = \App\Models\Author::all();
+
+    foreach($authors as $author){
+        echo 'Author name:'.$author['name'].'<br>';
+        echo '<b> Author\'s books: </b>';
+        foreach ($author->books as $book){
+             echo $book['title'].'<br>';
+        }
+        echo '-------------------------------'.'<br>';
+    }
+
+});
