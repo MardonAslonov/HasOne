@@ -41,11 +41,22 @@ Route::get('author', function () {
 
     foreach($authors as $author){
         echo 'Author name:'.$author['name'].'<br>';
-        echo '<b> Author\'s books: </b>';
+        echo '<b> Author\'s books: </b>'.'<br>';
         foreach ($author->books as $book){
              echo $book['title'].'<br>';
         }
         echo '-------------------------------'.'<br>';
+    }
+
+});
+
+Route::get('book', function () {
+    $books = \App\Models\Book::all();
+
+    foreach($books as $book){
+        echo $book['title'];
+        echo ' <b> Author\'s book: </b>'.$book->author['name'].'<br>';
+        echo '------------------------------------------------'.'<br>';
     }
 
 });
